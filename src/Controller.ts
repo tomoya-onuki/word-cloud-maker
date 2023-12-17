@@ -102,7 +102,8 @@ export class Controller {
     
             canvas.toBlob((blob: any) => {
                 const url: any = URL.createObjectURL(blob);
-                let outname = `wcm-download-${new Date().toLocaleDateString()}.png`
+                const crntDate = new Date();
+                let outname = `wcm-download-${crntDate.toLocaleDateString()}_${crntDate.toLocaleTimeString()}.png`
                 $('<a>', {
                     href: url,
                     download: outname
