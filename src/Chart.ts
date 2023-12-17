@@ -48,7 +48,13 @@ export class Chart {
         this.resizeByWordSize();
 
         const drawWordCloud = (words: any[]) => {
-            console.log(words)
+            // console.log(words.length, this.wordList.length)
+            $('#msg').text();
+            if (this.wordList.length !== words.length) {
+                $('#msg').text(`Faital: ${this.wordList.length - words.length}/${this.wordList.length}`);
+            }
+
+            
             this.svg.append("g")
                 .attr("transform", "translate(" + layout.size()[0] / 2 + "," + layout.size()[1] / 2 + ")")
                 .selectAll("text")
