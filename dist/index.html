@@ -1,0 +1,232 @@
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./main.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;600;700;800;900&family=Noto+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Source+Code+Pro&family=Zen+Kaku+Gothic+New:wght@300;400;500;700;900&display=swap"
+        rel="stylesheet">
+    <title></title>
+</head>
+
+<body>
+    <div id="controller">
+        <div id="header">WordCloudMaker</div>
+        
+        <div class="pane">
+            <label for="font-selector">FontFamily</label>
+            <select name="font-selector" id="font-selector">
+                <optgroup label="Default">
+                    <option value="Arial">Arial</option>
+                    <option value="Times New Roman">Times New Roman</option>
+                    <option value="sans-serif">sans-serif</option>
+                    <option value="serif">serif</option>
+                </optgroup>
+                <optgroup label="GoogleFont">
+                    <option value="Noto Sans">Noto Sans</option>
+                    <option value="Noto Sans JP">Noto Sans JP</option>
+                    <option value="Noto Serif">Noto Serif</option>
+                    <option value="Noto Serif JP">Noto Serif JP</option>
+                    <option value="Roboto">Roboto</option>
+                    <option value="Source Code Pro">Source Code Pro</option>
+                    <option value="Zen Kaku Gothic New">Zen Kaku Gothic New</option>
+                    <option value="Zen Maru Gothic">Zen Maru Gothic</option>
+                    <option value="Zen Old Mincho">Zen Old Mincho</option>
+                </optgroup>
+                <optgroup label="Windows">
+                    <option value="メイリオ">メイリオ</option>
+                    <option value="Meiryo">Meiryo</option>
+                    <option value="Meiryo UI">Meiryo UI</option>
+                    <option value="YuGothic">YuGothic</option>
+                    <option value="Yu Gothic">Yu Gothic</option>
+                    <option value="Yu Mincho Light">Yu Mincho Light</option>
+                    <option value="YuMincho">YuMincho</option>
+                    <option value="Yu Mincho">Yu Mincho</option>
+                    <option value="游明朝体">游明朝体</option>
+                    <option value="Yu Gothic UI">Yu Gothic UI</option>
+                    <option value="ＭＳ ゴシック">ＭＳ ゴシック</option>
+                    <option value="ＭＳ Ｐゴシック">ＭＳ Ｐゴシック</option>
+                    <option value="MS PGothic">MS PGothic</option>
+                    <option value="MS UI Gothic">MS UI Gothic</option>
+                    <option value="ＭＳ 明朝">ＭＳ 明朝</option>
+                    <option value=" MS Mincho"> MS Mincho</option>
+                    <option value="ＭＳ Ｐ明朝">ＭＳ Ｐ明朝</option>
+                    <option value="MS PMincho">MS PMincho</option>
+                    <option value="Arial Black">Arial Black</option>
+                    <option value="Calibri">Calibri</option>
+                    <option value="Cambria">Cambria</option>
+                    <option value="Cambria Math">Cambria Math</option>
+                    <option value="Candara">Candara</option>
+                    <option value="Consolas">Consolas</option>
+                    <option value="Comic Sans MS">Comic Sans MS</option>
+                    <option value="Constantia">Constantia</option>
+                    <option value="Corbel">Corbel</option>
+                    <option value="Courier">Courier</option>
+                    <option value="Ebrima">Ebrima</option>
+                    <option value="Franklin Gothic Medium">Franklin Gothic Medium</option>
+                    <option value="Gadugi">Gadugi</option>
+                    <option value="Gabriola">Gabriola</option>
+                    <option value="Georgia">Georgia</option>
+                    <option value="Impact">Impact</option>
+                    <option value="Javanese Text">Javanese Text</option>
+                    <option value="Leelawadee UI">Leelawadee UI</option>
+                    <option value="Lucida Console">Lucida Console</option>
+                    <option value="Modern">Modern</option>
+                    <option value="Mongolian Baiti">Mongolian Baiti</option>
+                    <option value="MS Sans Serif">MS Sans Serif</option>
+                    <option value="Mv Boli">Mv Boli</option>
+                    <option value="Palatino Linotype">Palatino Linotype</option>
+                    <option value="Roman">Roman</option>
+                    <option value="Script">Script</option>
+                    <option value="Segoe Print">Segoe Print</option>
+                    <option value="Segoe Script">Segoe Script</option>
+                    <option value="Segoe UI">Segoe UI</option>
+                    <option value="Segoe UI Black">Segoe UI Black</option>
+                    <option value="Segoe UI Emoji">Segoe UI Emoji</option>
+                    <option value="Segoe UI Historic">Segoe UI Historic</option>
+                    <option value="Segoe UI Symbol">Segoe UI Symbol</option>
+                    <option value="Sitka Banner">Sitka Banner</option>
+                    <option value="Sitka Display">Sitka Display</option>
+                    <option value="Sitka Heading">Sitka Heading</option>
+                    <option value="Sitka Text">Sitka Text</option>
+                    <option value="Sitka Subheading">Sitka Subheading</option>
+                    <option value="Small Fonts">Small Fonts</option>
+                    <option value="Sitka Small">Sitka Small</option>
+                    <option value="Sylfaen">Sylfaen</option>
+                    <option value="System">System</option>
+                    <option value="Tahoma">Tahoma</option>
+                    <option value="Trebuchet MS">Trebuchet MS</option>
+                </optgroup>
+                <optgroup label="mac">
+                    <option value="ヒラギノ角ゴシック">ヒラギノ角ゴシック</option>
+                    <option value="Hiragino Sans">Hiragino Sans</option>
+                    <option value="Hiragino Kaku Gothic ProN">Hiragino Kaku Gothic ProN</option>
+                    <option value="ヒラギノ角ゴ ProN W3">ヒラギノ角ゴ ProN W3</option>
+                    <option value="ヒラギノ角ゴ StdN">ヒラギノ角ゴ StdN</option>
+                    <option value="Hiragino Kaku Gothic StdN">Hiragino Kaku Gothic StdN</option>
+                    <option value="ヒラギノ明朝 ProN">ヒラギノ明朝 ProN</option>
+                    <option value="Hiragino Mincho ProN">Hiragino Mincho ProN</option>
+                    <option value="ヒラギノ丸ゴ ProN">ヒラギノ丸ゴ ProN</option>
+                    <option value="Hiragino Maru Gothic ProN">Hiragino Maru Gothic ProN</option>
+                    <option value="klee">klee</option>
+                    <option value="TsukuARdGothic-Regular">TsukuARdGothic-Regular</option>
+                    <option value="TsukuBRdGothic-Regular">TsukuBRdGothic-Regular</option>
+                    <option value="Osaka">Osaka</option>
+                    <option value="YuGothic">YuGothic</option>
+                    <option value="Yu Gothic">Yu Gothic</option>
+                    <option value="Yu Mincho Light">Yu Mincho Light</option>
+                    <option value="YuMincho">YuMincho</option>
+                    <option value="Yu Mincho">Yu Mincho</option>
+                    <option value="游明朝体">游明朝体</option>
+                    <option value="游明朝体+36ポかな">游明朝体+36ポかな</option>
+                    <option value="YuMincho +36p Kana">YuMincho +36p Kana</option>
+                    <option value="Hannotate SC">Hannotate SC</option>
+                    <option value="Hannotate TC">Hannotate TC</option>
+                    <option value="HanziPen SC">HanziPen SC</option>
+                    <option value="HanziPen TC">HanziPen TC</option>
+                    <option value="Wawati SC">Wawati SC</option>
+                    <option value="Kaiti SC">Kaiti SC</option>
+                    <option value="Kaiti TC">Kaiti TC</option>
+                    <option value="American Typewriter">American Typewriter</option>
+                    <option value="Andale Mono">Andale Mono</option>
+                    <option value="Arial Black">Arial Black</option>
+                    <option value="Arial Narrow">Arial Narrow</option>
+                    <option value="Arial Rounded MT Bold">Arial Rounded MT Bold</option>
+                    <option value="Arial Unicode MS">Arial Unicode MS</option>
+                    <option value="Athelas">Athelas</option>
+                    <option value="Avenir">Avenir</option>
+                    <option value="Avenir Next">Avenir Next</option>
+                    <option value="Avenir Next Condensed">Avenir Next Condensed</option>
+                    <option value="Apple Chancery">Apple Chancery</option>
+                    <option value="Apple Symbols">Apple Symbols</option>
+                    <option value="Baskerville">Baskerville</option>
+                    <option value="Big Caslon">Big Caslon</option>
+                    <option value="Bodoni 72">Bodoni 72</option>
+                    <option value="Bodoni 72 Oldstyle">Bodoni 72 Oldstyle</option>
+                    <option value="Bodoni 72 Smallcaps">Bodoni 72 Smallcaps</option>
+                    <option value="Bradley Hand">Bradley Hand</option>
+                    <option value="Brush Script MT">Brush Script MT</option>
+                    <option value="Chalkboard">Chalkboard</option>
+                    <option value="Chalkboard SE">Chalkboard SE</option>
+                    <option value="Chalkduster">Chalkduster</option>
+                    <option value="Charter">Charter</option>
+                    <option value="Cochin">Cochin</option>
+                    <option value="Comic Sans MS">Comic Sans MS</option>
+                    <option value="Copperplate">Copperplate</option>
+                    <option value="Courier">Courier</option>
+                    <option value="Courier New">Courier New</option>
+                    <option value="Didot">Didot</option>
+                    <option value="DIN Alternate">DIN Alternate</option>
+                    <option value="DIN Condensed">DIN Condensed</option>
+                    <option value="Futura">Futura</option>
+                    <option value="Geneva">Geneva</option>
+                    <option value="Georgia">Georgia</option>
+                    <option value="Gill Sans">Gill Sans</option>
+                    <option value="Gurmukhi MN">Gurmukhi MN</option>
+                    <option value="Helvetica">Helvetica</option>
+                    <option value="Helvetica Neue">Helvetica Neue</option>
+                    <option value="Herculanum">Herculanum</option>
+                    <option value="HoeflerText-Regular">HoeflerText-Regular</option>
+                    <option value="Hoefler Text">Hoefler Text</option>
+                    <option value="HoeflerText-Black">HoeflerText-Black</option>
+                    <option value="Impact">Impact</option>
+                    <option value="Iowan Old Style">Iowan Old Style</option>
+                    <option value="Lucida Grande">Lucida Grande</option>
+                    <option value="Luminari">Luminari</option>
+                    <option value="Marion">Marion</option>
+                    <option value="Marker Felt">Marker Felt</option>
+                    <option value="Menlo">Menlo</option>
+                    <option value="Microsoft Sans Serif">Microsoft Sans Serif</option>
+                    <option value="Monaco">Monaco</option>
+                    <option value="Noteworthy">Noteworthy</option>
+                    <option value="Optima">Optima</option>
+                    <option value="Palatino">Palatino</option>
+                    <option value="Papyrus">Papyrus</option>
+                    <option value="Papyrus-Condensed">Papyrus-Condensed</option>
+                    <option value="Phosphate">Phosphate</option>
+                    <option value="Phosphate-Solid">Phosphate-Solid</option>
+                    <option value="Plantagenet Cherokee">Plantagenet Cherokee</option>
+                    <option value="PT Mono">PT Mono</option>
+                    <option value="PT Sans">PT Sans</option>
+                    <option value="PT Sans Caption">PT Sans Caption</option>
+                    <option value="PT Sans Narrow">PT Sans Narrow</option>
+                    <option value="PT Serif">PT Serif</option>
+                    <option value="PT Serif Caption">PT Serif Caption</option>
+                    <option value="San Fransisco">San Fransisco</option>
+                    <option value="Savoye LET">Savoye LET</option>
+                    <option value="Seravek">Seravek</option>
+                    <option value="SignPainter">SignPainter</option>
+                    <option value="Silom">Silom</option>
+                    <option value="Skia">Skia</option>
+                    <option value="Skia-Regular_Black">Skia-Regular_Black</option>
+                    <option value="Skia-Regular_Condensed">Skia-Regular_Condensed</option>
+                    <option value="Snell Roundhand">Snell Roundhand</option>
+                    <option value="Superclarendon">Superclarendon</option>
+                    <option value="Tahoma">Tahoma</option>
+                    <option value="Times">Times</option>
+                </optgroup>
+            </select>
+            <space></space>
+            <label for="font-color-selector">Color</label>
+            <input type="color" name="font-color-selector" id="font-color-selector" value="#555555">
+            <space></space>
+            <button id="redraw-btn">ReDRAW</button>
+            <space></space>
+            <button id="save-btn">SAVE</button>
+        </div>
+
+        <div class="pane">
+            <label>Word List</label>
+            <div>
+                <button id="add-word-btn">+</button>
+            </div>
+            <div id="word-form-list"></div>
+        </div>
+    </div>
+
+    <div id="svg"></div>
+</body>

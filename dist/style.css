@@ -1,0 +1,61 @@
+body {
+    font-family: "Noto Sans";
+    color: #333;
+}
+
+#svg {
+    width: 350px;
+    height: 350px;
+}
+
+#header {
+    font-weight: bold;
+    padding: 10px 20px;
+}
+
+
+.pane {
+    margin: 20px 20px;
+}
+space {
+    height: 0;
+    width: 10px;
+    display: inline-block;
+}
+label {
+    font-weight: bold;
+}
+
+input[type="text"] {
+    border-radius: 5px;
+    border: 1px #aaa solid;
+    width: 160px;
+}
+select {
+    border-radius: 5px;
+    border: 1px #aaa solid;
+}
+input[type="range"] {
+    width: 100px;
+    margin: 0 10px;
+    transform: translate(0, 3px);
+}
+button {
+    background-color: #fff;
+    border: 1px #aaa solid;
+    border-radius: 5px;
+    width: 100px;
+    cursor: pointer;
+}
+button:hover {
+    opacity: 0.6;
+}
+input[type="color"] {
+    border: none;
+    background-color: rgba(0, 0, 0, 0);
+    transform: translate(0, 4px);;
+}
+
+#word-form-list {
+    margin: 5px 0;
+}
