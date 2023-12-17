@@ -45,7 +45,8 @@ export class Controller {
             .val(1);
         let delBtnElem = $('<button></button>')
             .attr('id', `word${this.wordFormLen}-del-btn`)
-            .text('DELETE')
+            .text('delete')
+            // .addClass('material-symbols-outlined')
             .on('click', () => {
                 addElem.remove();
             });

@@ -10,7 +10,7 @@ export class Chart {
     private margin: Margin = { top: 10, right: 10, bottom: 10, left: 10 };
     private width: number;
     private height: number;
-    private _font: string = 'YuGothic';
+    private _font: string = 'Arial';
     private _color: string = '#555'
 
     constructor() {
@@ -20,12 +20,19 @@ export class Chart {
     }
 
     private getInitSVG() {
-        return d3.select("#svg").append("svg").attr('id', 'fig');
+        return d3.select("#svg")
+            .append("svg")
+            .attr('id', 'fig')
+            .attr("width", this.width + this.margin.left + this.margin.right)
+            .attr("height", this.height + this.margin.top + this.margin.bottom)
+            .append("g")
+            .attr("transform", `translate(${this.margin.left}, ${this.margin.top})`);
     }
 
     public entryWordList(_wordList: Word[]) {
         this.wordList = _wordList;
     }
+
 
     private resizeByWordSize() {
         let minWidth = 200;
@@ -41,17 +48,23 @@ export class Chart {
         this.svg.attr("width", this.width + this.margin.left + this.margin.right)
             .attr("height", this.height + this.margin.top + this.margin.bottom)
             .append("g")
-            .attr("transform", "translate(" + this.margin.left + "," + this.margin.top + ")");
+            .attr("transform", `translate(${this.margin.left}, ${this.margin.top})`);
     }
 
     public draw() {
         this.resizeByWordSize();
+        // let maxSize = this.calcMaxWordSize();
+        const scaleWordSize = d3.scaleLinear()
+            .domain([1, 5])
+            .range([5, 50]);
+
 
         const drawWordCloud = (words: any[]) => {
             // console.log(words.length, this.wordList.length)
-            $('#msg').text();
-            $('#msg').text(`Succece: ${this.wordList.length - words.length}/${this.wordList.length}`);
-            $('#msg').text(`Faital: ${this.wordList.length - words.length}/${this.wordList.length}`);
+            $('#msg').text(`
+                Success: ${words.length}/${this.wordList.length}, 
+                Failure: ${this.wordList.length - words.length}/${this.wordList.length}
+            `);
 
 
             this.svg.append("g")
@@ -78,7 +91,7 @@ export class Chart {
             }))
             .rotate(0)
             .padding(d => Number(d.size) / 10)
-            .fontSize(d => Number(d.size) * 10)
+            .fontSize(d => scaleWordSize(Number(d.size)))
             .spiral("archimedean")
             .on("end", drawWordCloud);
         layout.start();
