@@ -7,9 +7,12 @@ window.onload = () => {
     controller.redrawEvent();
     controller.addWordFormEvent();
     controller.saveImageEvent();
-    
+
     controller.defaultMode();
     // chart.draw();
 };
 
-
+window.addEventListener('beforeunload', function (e) {
+    e.preventDefault();
+    e.returnValue = '';
+});

@@ -80,7 +80,7 @@ eval("\nvar __importDefault = (this && this.__importDefault) || function (mod) {
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 "use strict";
-eval("\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\nconst Chart_1 = __webpack_require__(/*! ./Chart */ \"./src/Chart.ts\");\nconst Controller_1 = __webpack_require__(/*! ./Controller */ \"./src/Controller.ts\");\nwindow.onload = () => {\n    const chart = new Chart_1.Chart();\n    const controller = new Controller_1.Controller(chart);\n    controller.redrawEvent();\n    controller.addWordFormEvent();\n    controller.saveImageEvent();\n    controller.defaultMode();\n    // chart.draw();\n};\n\n\n//# sourceURL=webpack://wordcloudmaker/./src/main.ts?");
+eval("\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\nconst Chart_1 = __webpack_require__(/*! ./Chart */ \"./src/Chart.ts\");\nconst Controller_1 = __webpack_require__(/*! ./Controller */ \"./src/Controller.ts\");\nwindow.onload = () => {\n    const chart = new Chart_1.Chart();\n    const controller = new Controller_1.Controller(chart);\n    controller.redrawEvent();\n    controller.addWordFormEvent();\n    controller.saveImageEvent();\n    controller.defaultMode();\n    // chart.draw();\n};\nwindow.addEventListener('beforeunload', function (e) {\n    e.preventDefault();\n    e.returnValue = '';\n});\n\n\n//# sourceURL=webpack://wordcloudmaker/./src/main.ts?");
 
 /***/ }),
 
